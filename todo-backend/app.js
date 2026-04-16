@@ -1,21 +1,22 @@
 // Core Module
-const path = require('path');
+
 
 // External Module
 const express = require('express');
 const mongoose = require('mongoose');
+const cors=require("cors");
 
 //local
 const todoItemsRouter = require("./routes/todoItemsRouter")
 const errorsController=require("./controllers/errors")
-const rootDir = require("./utils/pathUtil");
 
 const app = express();
 
 const DB_PATH = "";
 
 app.use(express.urlencoded());
-app.use(express.static(path.join(rootDir, 'public')))
+app.use(cors());
+app.use(express.json());
 
 app.use("/api/todo",todoItemsRouter);
 
