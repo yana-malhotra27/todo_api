@@ -7,7 +7,7 @@
   },
   "servers": [
     {
-      "url": "http://localhost:3003/api/todo"
+      "url": "http://localhost:3003/api"
     }
   ],
   "tags": [
@@ -17,7 +17,7 @@
     }
   ],
   "paths": {
-    "/": {
+    "/todo": {
       "get": {
         "description": "",
         "responses": {
@@ -52,7 +52,7 @@
         }
       }
     },
-    "/{id}": {
+    "/todo/{id}": {
       "delete": {
         "description": "",
         "parameters": [
@@ -72,7 +72,7 @@
         }
       }
     },
-    "/{id}/completed": {
+    "/todo/{id}/completed": {
       "put": {
         "description": "",
         "parameters": [

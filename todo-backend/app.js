@@ -21,7 +21,7 @@ app.use(express.urlencoded());
 app.use(cors());
 app.use(express.json());
 
-app.use("/api/todo",todoItemsRouter);
+app.use("/api",todoItemsRouter);
 
 app.use("/api-docs", swaggerUIPath.serve, swaggerUIPath.setup(swaggerjsonFilePath));
 

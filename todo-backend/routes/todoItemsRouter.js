@@ -6,7 +6,7 @@ const todoItemsController = require("../controllers/todoItemsController");
  * #swagger.tags = ['Todo']
  * #swagger.summary = 'Get all todo items'
  */
-todoItemsRouter.get("/", todoItemsController.getTodoItems);
+todoItemsRouter.get("/todo", todoItemsController.getTodoItems);
 
 /**
  * #swagger.tags = ['Todo']
@@ -20,18 +20,18 @@ todoItemsRouter.get("/", todoItemsController.getTodoItems);
  *   }
  * }
  */
-todoItemsRouter.post("/", todoItemsController.createTodoItem);
+todoItemsRouter.post("/todo", todoItemsController.createTodoItem);
 
 /**
  * #swagger.tags = ['Todo']
  * #swagger.summary = 'Delete a todo item'
  */
-todoItemsRouter.delete("/:id", todoItemsController.deleteTodoItem);
+todoItemsRouter.delete("/todo/:id", todoItemsController.deleteTodoItem);
 
 /**
  * #swagger.tags = ['Todo']
  * #swagger.summary = 'Mark todo as completed'
  */
-todoItemsRouter.put("/:id/completed", todoItemsController.markCompleted);
+todoItemsRouter.put("/todo/:id/completed", todoItemsController.markCompleted);
 
 module.exports = todoItemsRouter;

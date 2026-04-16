@@ -10,7 +10,7 @@ const doc = {
     description: "API for Managing Todo",
   },
   host: "localhost:3003",
-  basePath: "/api/todo",
+  basePath: "/api",
   schemes: ["http"],
   definitions: {
     Todo: {
