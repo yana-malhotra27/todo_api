@@ -7,6 +7,7 @@ export const addItemToServer = async (task, date) => {
     body: JSON.stringify({ task, date }),
   });
   const item = await response.json();
+  console.log(response)
   return mapServerItemToLocalItem(item);
 };
 

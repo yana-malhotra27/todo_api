@@ -6,6 +6,9 @@ const express = require('express');
 const mongoose = require('mongoose');
 const cors=require("cors");
 
+const swaggerUIPath= require("swagger-ui-express");
+const swaggerjsonFilePath = require("./docs/swagger.json");
+
 //local
 const todoItemsRouter = require("./routes/todoItemsRouter")
 const errorsController=require("./controllers/errors")
@@ -19,6 +22,8 @@ app.use(cors());
 app.use(express.json());
 
 app.use("/api/todo",todoItemsRouter);
+
+app.use("/api-docs", swaggerUIPath.serve, swaggerUIPath.setup(swaggerjsonFilePath));
 
 app.use(errorsController.pageNotFound);
 
