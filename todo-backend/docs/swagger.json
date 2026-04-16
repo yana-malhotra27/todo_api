@@ -7,85 +7,16 @@
   },
   "servers": [
     {
-      "url": "http://localhost:3003/"
+      "url": "http://localhost:3003/api/todo"
+    }
+  ],
+  "tags": [
+    {
+      "name": "Todo",
+      "description": "Todo APIs"
     }
   ],
   "paths": {
-    "/api/todo/": {
-      "get": {
-        "description": "",
-        "responses": {
-          "200": {
-            "description": "OK"
-          }
-        }
-      },
-      "post": {
-        "description": "",
-        "responses": {
-          "201": {
-            "description": "Created"
-          }
-        },
-        "requestBody": {
-          "content": {
-            "application/json": {
-              "schema": {
-                "type": "object",
-                "properties": {
-                  "task": {
-                    "example": "any"
-                  },
-                  "date": {
-                    "example": "any"
-                  }
-                }
-              }
-            }
-          }
-        }
-      }
-    },
-    "/api/todo/{id}": {
-      "delete": {
-        "description": "",
-        "parameters": [
-          {
-            "name": "id",
-            "in": "path",
-            "required": true,
-            "schema": {
-              "type": "string"
-            }
-          }
-        ],
-        "responses": {
-          "204": {
-            "description": "No Content"
-          }
-        }
-      }
-    },
-    "/api/todo/{id}/completed": {
-      "put": {
-        "description": "",
-        "parameters": [
-          {
-            "name": "id",
-            "in": "path",
-            "required": true,
-            "schema": {
-              "type": "string"
-            }
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "OK"
-          }
-        }
-      }
-    },
     "/": {
       "get": {
         "description": "",

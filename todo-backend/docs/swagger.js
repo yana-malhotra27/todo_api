@@ -10,6 +10,7 @@ const doc = {
     description: "API for Managing Todo",
   },
   host: "localhost:3003",
+  basePath: "/api/todo",
   schemes: ["http"],
   definitions: {
     Todo: {
@@ -18,9 +19,15 @@ const doc = {
       completed: false,
     },
   },
+  tags: [
+    {
+      name: "Todo",
+      description: "Todo APIs",
+    },
+  ],
 };
 
 const outputFile = "./docs/swagger.json";
-const endpointsFiles = ["./app.js", "./routes/todoItemsRouter.js"];
+const endpointsFiles = ["./routes/todoItemsRouter.js"];
 
 swaggerAutogen(outputFile, endpointsFiles, doc);
